@@ -31,7 +31,6 @@ const App = () => {
                 showsVerticalScrollIndicator={false}
             >
                 <StatusBar hidden />
-                <Text style={styles.date}>{getFormatedDate()}</Text>
                 <Text style={styles.title}>Ali Askari</Text>
 
                 {posts.map((post, index) => (
