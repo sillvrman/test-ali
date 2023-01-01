@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         marginBottom: 3,
     },
     title: {
-        color: '#000',
+        color: '#FFF',
         fontSize: 36,
         fontWeight: '700',
         marginBottom: 10,

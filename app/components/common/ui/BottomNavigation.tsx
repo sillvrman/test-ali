@@ -1,3 +1,4 @@
+import { AntDesign, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 import React, { useCallback } from 'react';
 import {
     StyleSheet,
@@ -65,10 +66,10 @@ const BottomNavigation = () => {
                         }}
                     >
                         <View>
-                            <Text>A</Text>
+                            <AntDesign name="home" size={24} color="gray" />
                         </View>
                         <View>
-                            <Text>A</Text>
+                            <Feather name="hash" size={24} color="gray" />
                         </View>
                         <View
                             style={{
@@ -85,10 +86,10 @@ const BottomNavigation = () => {
                             <CircularProgress animatedProps={animatedProps} />
                         </View>
                         <View>
-                            <Text>A</Text>
+                            <Feather name="list" size={24} color="gray" />
                         </View>
                         <View>
-                            <Text>A</Text>
+                            <MaterialCommunityIcons name="tooltip-account" size={24} color="gray" />
                         </View>
                     </View>
                 </Animated.View>
