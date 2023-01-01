@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
 
-export default function App() {
+import App from './app/app';
+import { OfflineNotice } from './app/components';
+import store from './app/store';
+
+const _App = () => {
+    const [loaded] = useFonts({
+        InterBold: require('./assets/fonts/Inter-Bold.ttf'),
+        InterSemiBold: require('./assets/fonts/Inter-SemiBold.ttf'),
+        InterMedium: require('./assets/fonts/Inter-Medium.ttf'),
+        InterRegular: require('./assets/fonts/Inter-Regular.ttf'),
+        InterLight: require('./assets/fonts/Inter-Light.ttf'),
+    });
+
+    if (!loaded) return null;
+
+    const queryClient = new QueryClient();
     return (
-        <View style={styles.container}>
-            <Text>Open up App.tsx to start working on your app!</Text>
-            <StatusBar style="auto" />
-        </View>
+        <QueryClientProvider client={queryClient}>
+            <Provider store={store}>
+                <OfflineNotice />
+                <App />
+            </Provider>
+        </QueryClientProvider>
     );
-}
+};
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+export default _App;

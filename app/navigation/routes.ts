@@ -1,5 +1,6 @@
 export const routes = Object.freeze({
-  LOGIN: "Login",
-  WELCOME: "Welcome",
-  REGISTER: "Register",
+    LOGIN: 'Login',
+    HOME: 'Home',
+    DETAILS: 'Details',
+    REGISTER: 'Register',
 });
